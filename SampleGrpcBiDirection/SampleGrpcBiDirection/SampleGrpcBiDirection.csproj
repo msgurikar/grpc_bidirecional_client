@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Protobuf" Version="3.21.5" />
+    <PackageReference Include="Grpc.Core" Version="2.46.3" />
+    <PackageReference Include="Grpc.Net.Client" Version="2.48.0" />
+    <PackageReference Include="Grpc.Tools" Version="2.48.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.15.1" />
+    <PackageReference Include="NLog" Version="5.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Protos\" />
+  </ItemGroup>
+
+<ItemGroup>
+    <Protobuf Include=".\Protos\SampleServer\SampleService.proto" ProtoRoot=".\Protos\SampleServer\" GrpcServices="Client">      
+    </Protobuf>
+    <Protobuf Include=".\Protos\SampleServer\protobuf\*.proto" GrpcServices="Client">      
+    </Protobuf>	
+	<Protobuf Include=".\Protos\SampleClient\SampleClient.proto" GrpcServices="Both">      
+    </Protobuf>    
+ </ItemGroup>
+ 
+</Project>

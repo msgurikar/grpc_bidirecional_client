@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+import "google/protobuf/empty.proto";
+
+package SampleClient;
+
+service SampleClientService {
+  rpc Compute(Request) returns (Response) {}  
+}
+
+message Request {
+	int32 num_requests = 1;
+}
+
+message Response {
+	string status = 1;
+}

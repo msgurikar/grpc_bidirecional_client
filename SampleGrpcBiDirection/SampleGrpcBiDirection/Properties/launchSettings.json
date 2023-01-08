@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "SampleGrpcBiDirection": {
+      "commandName": "Project"
+    },
+    "Docker": {
+      "commandName": "Docker"
+    }
+  }
+}
