@@ -153,7 +153,7 @@ namespace SampleGrpcBiDirection
 
                     if (resp.Status == SampleService.ResponseStatus.Success)
                     {                    
-                        return Tuple.Create(ResponseStatus.Success, resp.Message);
+                        return Tuple.Create(ResponseStatus.Success, $"Pod Name is {resp.PodName} and Pod Status is {resp.PodStatus} and message is {resp.Message}");
                     }
                     else if (resp.Status == SampleService.ResponseStatus.Failed)
                     {                 
